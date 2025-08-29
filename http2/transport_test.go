@@ -35,7 +35,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/net/http2/hpack"
+	"cldmindnet/http2/hpack"
 )
 
 var (
@@ -1246,9 +1246,11 @@ func TestTransportReceiveUndeclaredTrailer(t *testing.T) {
 func TestTransportInvalidTrailer_Pseudo1(t *testing.T) {
 	testTransportInvalidTrailer_Pseudo(t, oneHeader)
 }
+
 func TestTransportInvalidTrailer_Pseudo2(t *testing.T) {
 	testTransportInvalidTrailer_Pseudo(t, splitHeader)
 }
+
 func testTransportInvalidTrailer_Pseudo(t *testing.T, trailers headerType) {
 	testInvalidTrailer(t, trailers, pseudoHeaderError(":colon"),
 		":colon", "foo",
@@ -1259,20 +1261,24 @@ func testTransportInvalidTrailer_Pseudo(t *testing.T, trailers headerType) {
 func TestTransportInvalidTrailer_Capital1(t *testing.T) {
 	testTransportInvalidTrailer_Capital(t, oneHeader)
 }
+
 func TestTransportInvalidTrailer_Capital2(t *testing.T) {
 	testTransportInvalidTrailer_Capital(t, splitHeader)
 }
+
 func testTransportInvalidTrailer_Capital(t *testing.T, trailers headerType) {
 	testInvalidTrailer(t, trailers, headerFieldNameError("Capital"),
 		"foo", "bar",
 		"Capital", "bad",
 	)
 }
+
 func TestTransportInvalidTrailer_EmptyFieldName(t *testing.T) {
 	testInvalidTrailer(t, oneHeader, headerFieldNameError(""),
 		"", "bad",
 	)
 }
+
 func TestTransportInvalidTrailer_BinaryFieldValue(t *testing.T) {
 	testInvalidTrailer(t, oneHeader, headerFieldValueError("x"),
 		"x", "has\nnewline",
@@ -1773,7 +1779,6 @@ func TestTransportDisableKeepAlives(t *testing.T) {
 	case <-time.After(1 * time.Second):
 		t.Errorf("timeout")
 	}
-
 }
 
 // Test concurrent requests with Transport.DisableKeepAlives. We can share connections,
@@ -1864,6 +1869,7 @@ func isTimeout(err error) bool {
 func TestTransportResponseHeaderTimeout_NoBody(t *testing.T) {
 	testTransportResponseHeaderTimeout(t, false)
 }
+
 func TestTransportResponseHeaderTimeout_Body(t *testing.T) {
 	testTransportResponseHeaderTimeout(t, true)
 }
@@ -2910,7 +2916,6 @@ func TestTransportRequestPathPseudo(t *testing.T) {
 		}
 
 	}
-
 }
 
 // golang.org/issue/17071 -- don't sniff the first byte of the request body
@@ -3795,6 +3800,7 @@ func BenchmarkDownloadFrameSize(b *testing.B) {
 	b.Run("256k Frame", func(b *testing.B) { benchLargeDownloadRoundTrip(b, 256*1024) })
 	b.Run("512k Frame", func(b *testing.B) { benchLargeDownloadRoundTrip(b, 512*1024) })
 }
+
 func benchLargeDownloadRoundTrip(b *testing.B, frameSize uint32) {
 	disableGoroutineTracking(b)
 	const transferSize = 1024 * 1024 * 1024 // must be multiple of 1M
@@ -4633,7 +4639,6 @@ func TestTransportFrameBufferReuse(t *testing.T) {
 			}
 		}()
 	}
-
 }
 
 // Ensure that a request blocking while being written to the underlying net.Conn doesn't
@@ -5147,6 +5152,7 @@ func TestTransportSlowWrites(t *testing.T) {
 func TestTransportClosesConnAfterGoAwayNoStreams(t *testing.T) {
 	testTransportClosesConnAfterGoAway(t, 0)
 }
+
 func TestTransportClosesConnAfterGoAwayLastStream(t *testing.T) {
 	testTransportClosesConnAfterGoAway(t, 1)
 }

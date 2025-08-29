@@ -17,7 +17,7 @@ import (
 	"strings"
 	"testing"
 
-	"golang.org/x/net/html/atom"
+	"cldmindnet/html/atom"
 )
 
 type testAttrs struct {
@@ -271,7 +271,6 @@ func TestParser(t *testing.T) {
 				}
 
 				err = testParseCase(ta.text, ta.want, ta.context, ParseOptionEnableScripting(ta.scripting))
-
 				if err != nil {
 					t.Errorf("%s test #%d %q, %s", tf, i, ta.text, err)
 				}

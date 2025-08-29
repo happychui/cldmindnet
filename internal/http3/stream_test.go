@@ -12,7 +12,7 @@ import (
 	"io"
 	"testing"
 
-	"golang.org/x/net/internal/quic/quicwire"
+	"cldmindnet/internal/quic/quicwire"
 )
 
 func TestStreamReadVarint(t *testing.T) {

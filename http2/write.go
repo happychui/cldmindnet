@@ -11,9 +11,9 @@ import (
 	"net/http"
 	"net/url"
 
-	"golang.org/x/net/http/httpguts"
-	"golang.org/x/net/http2/hpack"
-	"golang.org/x/net/internal/httpcommon"
+	"cldmindnet/http/httpguts"
+	"cldmindnet/http2/hpack"
+	"cldmindnet/internal/httpcommon"
 )
 
 // writeFramer is implemented by any type that is used to write frames.
@@ -76,7 +76,6 @@ type writeSettings []Setting
 func (s writeSettings) staysWithinBuffer(max int) bool {
 	const settingSize = 6 // uint16 + uint32
 	return frameHeaderLen+settingSize*len(s) <= max
-
 }
 
 func (s writeSettings) writeFrame(ctx writeContext) error {

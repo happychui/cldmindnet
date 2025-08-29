@@ -18,8 +18,8 @@ import (
 	"syscall"
 	"testing"
 
-	"golang.org/x/net/internal/socket"
-	"golang.org/x/net/nettest"
+	"cldmindnet/internal/socket"
+	"cldmindnet/nettest"
 )
 
 func TestSocket(t *testing.T) {
@@ -458,7 +458,7 @@ func main() {
 	for i, test := range tests {
 		t.Run(fmt.Sprintf("test %d", i), func(t *testing.T) {
 			src := filepath.Join(dir, fmt.Sprintf("test%d.go", i))
-			if err := os.WriteFile(src, []byte(test), 0644); err != nil {
+			if err := os.WriteFile(src, []byte(test), 0o644); err != nil {
 				t.Fatalf("failed to write file: %v", err)
 			}
 			t.Logf("%s run -race %s", goBinary, src)

@@ -11,9 +11,9 @@ import (
 	"runtime"
 	"testing"
 
-	"golang.org/x/net/internal/iana"
-	"golang.org/x/net/ipv6"
-	"golang.org/x/net/nettest"
+	"cldmindnet/internal/iana"
+	"cldmindnet/ipv6"
+	"cldmindnet/nettest"
 )
 
 func TestConnInitiatorPathMTU(t *testing.T) {

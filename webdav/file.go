@@ -39,11 +39,19 @@ func slashClean(name string) string {
 // overwriting another existing file or directory is an error is OS-dependent.
 type FileSystem interface {
 	Mkdir(ctx context.Context, name string, perm os.FileMode) error
-	OpenFile(ctx context.Context, name string, flag int, perm os.FileMode) (File, error)
 	RemoveAll(ctx context.Context, name string) error
+	OpenFile(ctx context.Context, name string, flag int, perm os.FileMode) (File, error)
 	Rename(ctx context.Context, oldName, newName string) error
 	Stat(ctx context.Context, name string) (os.FileInfo, error)
-	BefortCopy(ctx context.Context, src, dst string, overwrite bool) (err error)
+
+	BeforeCopy(ctx context.Context, src, dst string, overwrite bool) (err error)
+	AfterCopy(ctx context.Context, src, dst string, overwrite bool) (err error)
+	BeforeMove(ctx context.Context, src, dst string, overwrite bool) (err error)
+	AfterMove(ctx context.Context, src, dst string, overwrite bool) (err error)
+	BeforeRemove(ctx context.Context, name string) (err error)
+	AfterRemove(ctx context.Context, name string) (err error)
+	BeforeMkdir(ctx context.Context, name string, perm os.FileMode) (err error)
+	AfterMkdir(ctx context.Context, name string, perm os.FileMode) (err error)
 }
 
 // A File is returned by a FileSystem's OpenFile method and can be served by a
@@ -97,7 +105,36 @@ func (d Dir) OpenFile(ctx context.Context, name string, flag int, perm os.FileMo
 	return f, nil
 }
 
+// happy 添加的实现
 func (d Dir) BefortCopy(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (d Dir) AfterCopy(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (d Dir) BeforeMove(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (d Dir) AfterMove(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (d Dir) BeforeRemove(ctx context.Context, name string) (err error) {
+	return nil
+}
+
+func (d Dir) AfterRemove(ctx context.Context, name string) (err error) {
+	return nil
+}
+
+func (d Dir) BeforeMkdir(ctx context.Context, name string, perm os.FileMode) (err error) {
+	return nil
+}
+
+func (d Dir) AfterMkdir(ctx context.Context, name string, perm os.FileMode) (err error) {
 	return nil
 }
 
@@ -268,7 +305,36 @@ func (fs *memFS) Mkdir(ctx context.Context, name string, perm os.FileMode) error
 	return nil
 }
 
-func (fs *memFS) BefortCopy(ctx context.Context, src, dst string, overwrite bool) (err error) {
+// happy 添加的实现
+func (fs *memFS) BeforeCopy(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (fs *memFS) AfterCopy(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (fs *memFS) BeforeMove(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (fs *memFS) AfterMove(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
+func (fs *memFS) BeforeRemove(ctx context.Context, name string) (err error) {
+	return nil
+}
+
+func (fs *memFS) AfterRemove(ctx context.Context, name string) (err error) {
+	return nil
+}
+
+func (fs *memFS) BeforeMkdir(ctx context.Context, name string, perm os.FileMode) (err error) {
+	return nil
+}
+
+func (fs *memFS) AfterMkdir(ctx context.Context, name string, perm os.FileMode) (err error) {
 	return nil
 }
 

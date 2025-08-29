@@ -79,7 +79,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"golang.org/x/net/internal/timeseries"
+	"cldmindnet/internal/timeseries"
 )
 
 // DebugUseAfterFinish controls whether to debug uses of Trace values after finishing.
@@ -953,8 +953,10 @@ func elapsed(d time.Duration) string {
 	return string(b)
 }
 
-var pageTmplCache *template.Template
-var pageTmplOnce sync.Once
+var (
+	pageTmplCache *template.Template
+	pageTmplOnce  sync.Once
+)
 
 func pageTmpl() *template.Template {
 	pageTmplOnce.Do(func() {

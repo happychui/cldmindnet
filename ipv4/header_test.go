@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"golang.org/x/net/internal/socket"
+	"cldmindnet/internal/socket"
 )
 
 type headerTest struct {

@@ -11,7 +11,7 @@ import (
 	"net"
 	"unsafe"
 
-	"golang.org/x/net/internal/socket"
+	"cldmindnet/internal/socket"
 )
 
 var errNoSuchInterface = errors.New("no such interface")

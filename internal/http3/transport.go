@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"sync"
 
-	"golang.org/x/net/quic"
+	"cldmindnet/quic"
 )
 
 // A Transport is an HTTP/3 transport.

@@ -13,7 +13,7 @@ import (
 	"slices"
 	"testing"
 
-	"golang.org/x/net/http2/hpack"
+	"cldmindnet/http2/hpack"
 )
 
 type testConnFramer struct {

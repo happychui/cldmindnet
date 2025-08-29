@@ -11,7 +11,7 @@ import (
 	"io"
 	"sync"
 
-	"golang.org/x/net/quic"
+	"cldmindnet/quic"
 )
 
 type streamHandler interface {

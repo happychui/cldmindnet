@@ -31,10 +31,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"golang.org/x/net/http/httpguts"
-	"golang.org/x/net/http2/hpack"
-	"golang.org/x/net/idna"
-	"golang.org/x/net/internal/httpcommon"
+	"cldmindnet/http/httpguts"
+
+	"cldmindnet/http2/hpack"
+	"cldmindnet/idna"
+	"cldmindnet/internal/httpcommon"
 )
 
 const (
@@ -2015,7 +2016,6 @@ func (cs *clientStream) awaitFlowControl(maxBytes int) (taken int32, err error) 
 		if a := cs.flow.available(); a > 0 {
 			take := a
 			if int(take) > maxBytes {
-
 				take = int32(maxBytes) // can't truncate int; take is int32
 			}
 			if take > int32(cc.maxFrameSize) {

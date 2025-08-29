@@ -15,13 +15,11 @@ import (
 	"strconv"
 	"strings"
 
-	"golang.org/x/net/http/httpguts"
-	"golang.org/x/net/http2/hpack"
+	"cldmindnet/http/httpguts"
+	"cldmindnet/http2/hpack"
 )
 
-var (
-	ErrRequestHeaderListSize = errors.New("request header list larger than peer's advertised limit")
-)
+var ErrRequestHeaderListSize = errors.New("request header list larger than peer's advertised limit")
 
 // Request is a subset of http.Request.
 // It'd be simpler to pass an *http.Request, of course, but we can't depend on net/http

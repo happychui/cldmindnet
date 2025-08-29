@@ -7,7 +7,7 @@ package quic
 import (
 	"encoding/binary"
 
-	"golang.org/x/net/internal/quic/quicwire"
+	"cldmindnet/internal/quic/quicwire"
 )
 
 // A packetWriter constructs QUIC datagrams.

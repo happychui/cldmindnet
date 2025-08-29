@@ -16,7 +16,8 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"golang.org/x/net/html"
+	"cldmindnet/html"
+
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/encoding/htmlindex"

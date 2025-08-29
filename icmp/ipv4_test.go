@@ -11,8 +11,8 @@ import (
 	"runtime"
 	"testing"
 
-	"golang.org/x/net/internal/socket"
-	"golang.org/x/net/ipv4"
+	"cldmindnet/internal/socket"
+	"cldmindnet/ipv4"
 )
 
 func TestParseIPv4Header(t *testing.T) {

@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/net/internal/quic/quicwire"
+	"cldmindnet/internal/quic/quicwire"
 )
 
 func TestTransportParametersMarshalUnmarshal(t *testing.T) {

@@ -7,7 +7,7 @@ package idna_test
 import (
 	"fmt"
 
-	"golang.org/x/net/idna"
+	"cldmindnet/idna"
 )
 
 func ExampleProfile() {

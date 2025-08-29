@@ -14,8 +14,8 @@ import (
 	"strings"
 	"sync"
 
-	"golang.org/x/net/http/httpguts"
-	"golang.org/x/net/http2/hpack"
+	"cldmindnet/http/httpguts"
+	"cldmindnet/http2/hpack"
 )
 
 const frameHeaderLen = 9
@@ -1542,7 +1542,7 @@ func (fr *Framer) readMetaFrame(hf *HeadersFrame) (Frame, error) {
 	mh := &MetaHeadersFrame{
 		HeadersFrame: hf,
 	}
-	var remainSize = fr.maxHeaderListSize()
+	remainSize := fr.maxHeaderListSize()
 	var sawRegular bool
 
 	var invalid error // pseudo header field errors

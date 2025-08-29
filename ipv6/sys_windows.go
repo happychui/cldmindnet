@@ -8,8 +8,8 @@ import (
 	"net"
 	"syscall"
 
-	"golang.org/x/net/internal/iana"
-	"golang.org/x/net/internal/socket"
+	"cldmindnet/internal/iana"
+	"cldmindnet/internal/socket"
 
 	"golang.org/x/sys/windows"
 )

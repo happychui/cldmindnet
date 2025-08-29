@@ -7,7 +7,7 @@ package bpf_test
 import (
 	"testing"
 
-	"golang.org/x/net/bpf"
+	"cldmindnet/bpf"
 )
 
 func TestVMJumpOne(t *testing.T) {

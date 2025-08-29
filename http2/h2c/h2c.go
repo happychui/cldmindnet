@@ -22,13 +22,11 @@ import (
 	"os"
 	"strings"
 
-	"golang.org/x/net/http/httpguts"
-	"golang.org/x/net/http2"
+	"cldmindnet/http/httpguts"
+	"cldmindnet/http2"
 )
 
-var (
-	http2VerboseLogs bool
-)
+var http2VerboseLogs bool
 
 func init() {
 	e := os.Getenv("GODEBUG")

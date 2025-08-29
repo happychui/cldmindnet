@@ -14,9 +14,9 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/net/internal/iana"
-	"golang.org/x/net/ipv4"
-	"golang.org/x/net/nettest"
+	"cldmindnet/internal/iana"
+	"cldmindnet/ipv4"
+	"cldmindnet/nettest"
 )
 
 func BenchmarkReadWriteUnicast(b *testing.B) {
@@ -549,7 +549,6 @@ func testPacketConnConcurrentReadWriteUnicast(t *testing.T, p *ipv4.PacketConn, 
 		} else {
 			go writer(i%2 != 0)
 		}
-
 	}
 	wg.Add(N)
 	for i := 0; i < N; i++ {

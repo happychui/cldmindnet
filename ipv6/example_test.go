@@ -11,8 +11,8 @@ import (
 	"os"
 	"time"
 
-	"golang.org/x/net/icmp"
-	"golang.org/x/net/ipv6"
+	"cldmindnet/icmp"
+	"cldmindnet/ipv6"
 )
 
 func ExampleConn_markingTCP() {

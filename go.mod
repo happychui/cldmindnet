@@ -1,4 +1,4 @@
-module golang.org/x/net
+module cldmindnet
 
 go 1.24.0
 

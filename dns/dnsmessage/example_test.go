@@ -9,7 +9,7 @@ import (
 	"net"
 	"strings"
 
-	"golang.org/x/net/dns/dnsmessage"
+	"cldmindnet/dns/dnsmessage"
 )
 
 func ExampleParser() {

@@ -245,8 +245,20 @@ func (h *Handler) handleDelete(w http.ResponseWriter, r *http.Request) (status i
 		}
 		return http.StatusMethodNotAllowed, err
 	}
+
+	// 添加BeforeRemove
+	err = h.FileSystem.BeforeRemove(ctx, reqPath)
+	if err != nil {
+		return http.StatusInternalServerError, err
+	}
 	if err := h.FileSystem.RemoveAll(ctx, reqPath); err != nil {
 		return http.StatusMethodNotAllowed, err
+	}
+
+	// 添加AfterRemove
+	err = h.FileSystem.AfterRemove(ctx, reqPath)
+	if err != nil {
+		return http.StatusInternalServerError, err
 	}
 	return http.StatusNoContent, nil
 }
@@ -264,6 +276,12 @@ func (h *Handler) handlePut(w http.ResponseWriter, r *http.Request) (status int,
 	// TODO(rost): Support the If-Match, If-None-Match headers? See bradfitz'
 	// comments in http.checkEtag.
 	ctx := r.Context()
+
+	// 添加BeforeCopy
+	err = h.FileSystem.BeforeCopy(ctx, reqPath, reqPath, false)
+	if err != nil {
+		return http.StatusInternalServerError, err
+	}
 
 	f, err := h.FileSystem.OpenFile(ctx, reqPath, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0o666)
 	if err != nil {
@@ -289,6 +307,13 @@ func (h *Handler) handlePut(w http.ResponseWriter, r *http.Request) (status int,
 	if err != nil {
 		return http.StatusInternalServerError, err
 	}
+
+	// 添加AfterCopy
+	err = h.FileSystem.AfterCopy(ctx, reqPath, reqPath, false)
+	if err != nil {
+		return http.StatusInternalServerError, err
+	}
+
 	w.Header().Set("ETag", etag)
 	return http.StatusCreated, nil
 }

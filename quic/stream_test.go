@@ -14,7 +14,7 @@ import (
 	"strings"
 	"testing"
 
-	"golang.org/x/net/internal/quic/quicwire"
+	"cldmindnet/internal/quic/quicwire"
 )
 
 func TestStreamWriteBlockedByOutputBuffer(t *testing.T) {
@@ -435,7 +435,6 @@ func TestStreamReceive(t *testing.T) {
 			}
 		})
 	}
-
 }
 
 func TestStreamReceiveExtendsStreamWindow(t *testing.T) {
@@ -1150,7 +1149,7 @@ func TestStreamCloseUnblocked(t *testing.T) {
 func TestStreamCloseWriteWhenBlockedByStreamFlowControl(t *testing.T) {
 	tc, s := newTestConnAndLocalStream(t, serverSide, uniStream, permissiveTransportParameters,
 		func(p *transportParameters) {
-			//p.initialMaxData = 0
+			// p.initialMaxData = 0
 			p.initialMaxStreamDataUni = 0
 		})
 	tc.ignoreFrame(frameTypeStreamDataBlocked)

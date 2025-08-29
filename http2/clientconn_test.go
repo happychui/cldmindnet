@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/net/http2/hpack"
-	"golang.org/x/net/internal/gate"
+	"cldmindnet/http2/hpack"
+	"cldmindnet/internal/gate"
 )
 
 // TestTestClientConn demonstrates usage of testClientConn.

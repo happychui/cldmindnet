@@ -4,7 +4,7 @@
 
 package ipv4
 
-import "golang.org/x/net/internal/socket"
+import "cldmindnet/internal/socket"
 
 // Sticky socket options
 const (

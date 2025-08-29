@@ -28,7 +28,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/net/http2/hpack"
+	"cldmindnet/http2/hpack"
 )
 
 var stderrVerbose = flag.Bool("stderr_verbose", false, "Mirror verbosity to stderr, unbuffered")
@@ -1080,11 +1080,13 @@ func TestRejectFrameOnIdle_WindowUpdate(t *testing.T) {
 	st.fr.WriteWindowUpdate(123, 456)
 	st.wantGoAway(123, ErrCodeProtocol)
 }
+
 func TestRejectFrameOnIdle_Data(t *testing.T) {
 	st := newServerTesterForError(t)
 	st.fr.WriteData(123, true, nil)
 	st.wantGoAway(123, ErrCodeProtocol)
 }
+
 func TestRejectFrameOnIdle_RSTStream(t *testing.T) {
 	st := newServerTesterForError(t)
 	st.fr.WriteRSTStream(123, ErrCodeCancel)
@@ -1356,7 +1358,8 @@ func testServerPostUnblock(t *testing.T,
 	handler func(http.ResponseWriter, *http.Request) error,
 	fn func(*serverTester),
 	checkErr func(error),
-	otherHeaders ...string) {
+	otherHeaders ...string,
+) {
 	inHandler := make(chan bool)
 	errc := make(chan error, 1)
 	st := newServerTester(t, func(w http.ResponseWriter, r *http.Request) {
@@ -3025,7 +3028,7 @@ func benchmarkServerToClientStream(b *testing.B, newServerOpts ...interface{}) {
 		endStream: false,
 	})
 
-	var pendingWindowUpdate = uint32(0)
+	pendingWindowUpdate := uint32(0)
 
 	for i := 0; i < b.N; i += 1 {
 		expected := nextMsg(i)
@@ -3102,6 +3105,7 @@ func (c *issue53Conn) Close() error {
 func (c *issue53Conn) LocalAddr() net.Addr {
 	return &net.TCPAddr{IP: net.IPv4(127, 0, 0, 1), Port: 49706}
 }
+
 func (c *issue53Conn) RemoteAddr() net.Addr {
 	return &net.TCPAddr{IP: net.IPv4(127, 0, 0, 1), Port: 49706}
 }
@@ -3402,7 +3406,8 @@ func TestServerHandleCustomConn(t *testing.T) {
 				defer close(handlerDone)
 				req = r
 			}),
-		}})
+		},
+	})
 	<-clientDone
 
 	if req.TLS == nil {
@@ -4280,7 +4285,6 @@ func TestServerInitialFlowControlWindow(t *testing.T) {
 		65535 * 2,
 	} {
 		t.Run(fmt.Sprint(want), func(t *testing.T) {
-
 			st := newServerTester(t, func(w http.ResponseWriter, r *http.Request) {
 			}, func(s *Server) {
 				s.MaxUploadBufferPerConnection = want

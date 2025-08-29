@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"golang.org/x/net/http/httpproxy"
+	"cldmindnet/http/httpproxy"
 )
 
 // setHelper calls t.Helper() for Go 1.9+ (see go19_test.go) and does nothing otherwise.
@@ -53,172 +53,173 @@ func (t proxyForURLTest) String() string {
 	return strings.TrimSpace(buf.String())
 }
 
-var proxyForURLTests = []proxyForURLTest{{
-	cfg: httpproxy.Config{
-		HTTPProxy: "127.0.0.1:8080",
+var proxyForURLTests = []proxyForURLTest{
+	{
+		cfg: httpproxy.Config{
+			HTTPProxy: "127.0.0.1:8080",
+		},
+		want: "http://127.0.0.1:8080",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "cache.corp.example.com:1234",
+		},
+		want: "http://cache.corp.example.com:1234",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "cache.corp.example.com",
+		},
+		want: "http://cache.corp.example.com",
+	}, {
+		// single label domain is recognized as scheme by url.Parse
+		cfg: httpproxy.Config{
+			HTTPProxy: "localhost",
+		},
+		want: "http://localhost",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "https://cache.corp.example.com",
+		},
+		want: "https://cache.corp.example.com",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "http://127.0.0.1:8080",
+		},
+		want: "http://127.0.0.1:8080",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "https://127.0.0.1:8080",
+		},
+		want: "https://127.0.0.1:8080",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "socks5://127.0.0.1",
+		},
+		want: "socks5://127.0.0.1",
+	}, {
+		// Preserve unknown schemes.
+		cfg: httpproxy.Config{
+			HTTPProxy: "foo://host",
+		},
+		want: "foo://host",
+	}, {
+		// Don't use secure for http
+		cfg: httpproxy.Config{
+			HTTPProxy:  "http.proxy.tld",
+			HTTPSProxy: "secure.proxy.tld",
+		},
+		req:  "http://insecure.tld/",
+		want: "http://http.proxy.tld",
+	}, {
+		// Use secure for https.
+		cfg: httpproxy.Config{
+			HTTPProxy:  "http.proxy.tld",
+			HTTPSProxy: "secure.proxy.tld",
+		},
+		req:  "https://secure.tld/",
+		want: "http://secure.proxy.tld",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy:  "http.proxy.tld",
+			HTTPSProxy: "https://secure.proxy.tld",
+		},
+		req:  "https://secure.tld/",
+		want: "https://secure.proxy.tld",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "http.proxy.tld",
+		},
+		req:  "https://secure.tld/",
+		want: "<nil>",
+	}, {
+		cfg: httpproxy.Config{
+			HTTPProxy: "http.proxy.tld",
+		},
+		req:  "ftp://insecure.tld/",
+		want: "<nil>",
+	}, {
+		// Issue 16405: don't use HTTP_PROXY in a CGI environment,
+		// where HTTP_PROXY can be attacker-controlled.
+		cfg: httpproxy.Config{
+			HTTPProxy: "http://10.1.2.3:8080",
+			CGI:       true,
+		},
+		want:    "<nil>",
+		wanterr: errors.New("refusing to use HTTP_PROXY value in CGI environment; see golang.org/s/cgihttpproxy"),
+	}, {
+		// HTTPS proxy is still used even in CGI environment.
+		// (perhaps dubious but it's the historical behaviour).
+		cfg: httpproxy.Config{
+			HTTPSProxy: "https://secure.proxy.tld",
+			CGI:        true,
+		},
+		req:  "https://secure.tld/",
+		want: "https://secure.proxy.tld",
+	}, {
+		want: "<nil>",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   "example.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://example.com/",
+		want: "<nil>",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   ".example.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://example.com/",
+		want: "http://proxy",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   "ample.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://example.com/",
+		want: "http://proxy",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   "example.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://foo.example.com/",
+		want: "<nil>",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   ".foo.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://example.com/",
+		want: "http://proxy",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   ".示例.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://www.示例.com",
+		want: "<nil>",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   "xn--fsq092h.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://www.示例.com",
+		want: "<nil>",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   "示例.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://www.xn--fsq092h.com",
+		want: "<nil>",
+	}, {
+		cfg: httpproxy.Config{
+			NoProxy:   "example.com",
+			HTTPProxy: "proxy",
+		},
+		req:  "http://[1000::%25.example.com]:123",
+		want: "http://proxy",
 	},
-	want: "http://127.0.0.1:8080",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "cache.corp.example.com:1234",
-	},
-	want: "http://cache.corp.example.com:1234",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "cache.corp.example.com",
-	},
-	want: "http://cache.corp.example.com",
-}, {
-	// single label domain is recognized as scheme by url.Parse
-	cfg: httpproxy.Config{
-		HTTPProxy: "localhost",
-	},
-	want: "http://localhost",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "https://cache.corp.example.com",
-	},
-	want: "https://cache.corp.example.com",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "http://127.0.0.1:8080",
-	},
-	want: "http://127.0.0.1:8080",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "https://127.0.0.1:8080",
-	},
-	want: "https://127.0.0.1:8080",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "socks5://127.0.0.1",
-	},
-	want: "socks5://127.0.0.1",
-}, {
-	// Preserve unknown schemes.
-	cfg: httpproxy.Config{
-		HTTPProxy: "foo://host",
-	},
-	want: "foo://host",
-}, {
-	// Don't use secure for http
-	cfg: httpproxy.Config{
-		HTTPProxy:  "http.proxy.tld",
-		HTTPSProxy: "secure.proxy.tld",
-	},
-	req:  "http://insecure.tld/",
-	want: "http://http.proxy.tld",
-}, {
-	// Use secure for https.
-	cfg: httpproxy.Config{
-		HTTPProxy:  "http.proxy.tld",
-		HTTPSProxy: "secure.proxy.tld",
-	},
-	req:  "https://secure.tld/",
-	want: "http://secure.proxy.tld",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy:  "http.proxy.tld",
-		HTTPSProxy: "https://secure.proxy.tld",
-	},
-	req:  "https://secure.tld/",
-	want: "https://secure.proxy.tld",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "http.proxy.tld",
-	},
-	req:  "https://secure.tld/",
-	want: "<nil>",
-}, {
-	cfg: httpproxy.Config{
-		HTTPProxy: "http.proxy.tld",
-	},
-	req:  "ftp://insecure.tld/",
-	want: "<nil>",
-}, {
-	// Issue 16405: don't use HTTP_PROXY in a CGI environment,
-	// where HTTP_PROXY can be attacker-controlled.
-	cfg: httpproxy.Config{
-		HTTPProxy: "http://10.1.2.3:8080",
-		CGI:       true,
-	},
-	want:    "<nil>",
-	wanterr: errors.New("refusing to use HTTP_PROXY value in CGI environment; see golang.org/s/cgihttpproxy"),
-}, {
-	// HTTPS proxy is still used even in CGI environment.
-	// (perhaps dubious but it's the historical behaviour).
-	cfg: httpproxy.Config{
-		HTTPSProxy: "https://secure.proxy.tld",
-		CGI:        true,
-	},
-	req:  "https://secure.tld/",
-	want: "https://secure.proxy.tld",
-}, {
-	want: "<nil>",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   "example.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://example.com/",
-	want: "<nil>",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   ".example.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://example.com/",
-	want: "http://proxy",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   "ample.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://example.com/",
-	want: "http://proxy",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   "example.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://foo.example.com/",
-	want: "<nil>",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   ".foo.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://example.com/",
-	want: "http://proxy",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   ".示例.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://www.示例.com",
-	want: "<nil>",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   "xn--fsq092h.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://www.示例.com",
-	want: "<nil>",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   "示例.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://www.xn--fsq092h.com",
-	want: "<nil>",
-}, {
-	cfg: httpproxy.Config{
-		NoProxy:   "example.com",
-		HTTPProxy: "proxy",
-	},
-	req:  "http://[1000::%25.example.com]:123",
-	want: "http://proxy",
-},
 }
 
 func testProxyForURL(t *testing.T, tt proxyForURLTest) {

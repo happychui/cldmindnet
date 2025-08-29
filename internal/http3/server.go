@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"sync"
 
-	"golang.org/x/net/quic"
+	"cldmindnet/quic"
 )
 
 // A Server is an HTTP/3 server.

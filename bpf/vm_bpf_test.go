@@ -10,10 +10,11 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/net/bpf"
-	"golang.org/x/net/ipv4"
-	"golang.org/x/net/ipv6"
-	"golang.org/x/net/nettest"
+	"cldmindnet/bpf"
+	"cldmindnet/ipv4"
+	"cldmindnet/ipv6"
+	"cldmindnet/nettest"
+
 	"golang.org/x/sys/cpu"
 )
 

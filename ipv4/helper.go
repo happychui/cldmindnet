@@ -9,7 +9,7 @@ import (
 	"net"
 	"runtime"
 
-	"golang.org/x/net/internal/socket"
+	"cldmindnet/internal/socket"
 )
 
 var (

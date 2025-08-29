@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"golang.org/x/net/internal/quic/quicwire"
+	"cldmindnet/internal/quic/quicwire"
 )
 
 // packetType is a QUIC packet type.
