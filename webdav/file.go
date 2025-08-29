@@ -43,6 +43,7 @@ type FileSystem interface {
 	RemoveAll(ctx context.Context, name string) error
 	Rename(ctx context.Context, oldName, newName string) error
 	Stat(ctx context.Context, name string) (os.FileInfo, error)
+	BefortCopy(ctx context.Context, src, dst string, overwrite bool) (err error)
 }
 
 // A File is returned by a FileSystem's OpenFile method and can be served by a
@@ -96,6 +97,10 @@ func (d Dir) OpenFile(ctx context.Context, name string, flag int, perm os.FileMo
 	return f, nil
 }
 
+func (d Dir) BefortCopy(ctx context.Context, src, dst string, overwrite bool) (err error) {
+	return nil
+}
+
 func (d Dir) RemoveAll(ctx context.Context, name string) error {
 	if name = d.resolve(name); name == "" {
 		return os.ErrNotExist
@@ -133,7 +138,7 @@ func NewMemFS() FileSystem {
 	return &memFS{
 		root: memFSNode{
 			children: make(map[string]*memFSNode),
-			mode:     0660 | os.ModeDir,
+			mode:     0o660 | os.ModeDir,
 			modTime:  time.Now(),
 		},
 	}
@@ -260,6 +265,10 @@ func (fs *memFS) Mkdir(ctx context.Context, name string, perm os.FileMode) error
 		mode:     perm.Perm() | os.ModeDir,
 		modTime:  time.Now(),
 	}
+	return nil
+}
+
+func (fs *memFS) BefortCopy(ctx context.Context, src, dst string, overwrite bool) (err error) {
 	return nil
 }
 
