@@ -7,7 +7,7 @@ package ipv6
 import (
 	"net"
 
-	"cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/bpf"
 )
 
 // MulticastHopLimit returns the hop limit field value for outgoing

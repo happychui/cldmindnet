@@ -9,7 +9,7 @@ package ipv4
 import (
 	"net"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 func (so *sockOpt) getIPMreqn(c *socket.Conn) (*net.Interface, error) {

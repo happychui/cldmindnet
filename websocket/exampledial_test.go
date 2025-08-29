@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"log"
 
-	"cldmindnet/websocket"
+	"github.com/happychui/cldmindnet/websocket"
 )
 
 // This example demonstrates a trivial client.

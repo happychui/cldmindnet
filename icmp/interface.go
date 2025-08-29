@@ -9,7 +9,7 @@ import (
 	"net"
 	"strings"
 
-	"cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/internal/iana"
 )
 
 const (

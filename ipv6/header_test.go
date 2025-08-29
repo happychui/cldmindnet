@@ -10,8 +10,8 @@ import (
 	"strings"
 	"testing"
 
-	"cldmindnet/internal/iana"
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 var (

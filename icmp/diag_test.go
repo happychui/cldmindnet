@@ -15,11 +15,11 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/icmp"
-	"cldmindnet/internal/iana"
-	"cldmindnet/ipv4"
-	"cldmindnet/ipv6"
-	"cldmindnet/nettest"
+	"github.com/happychui/cldmindnet/icmp"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/nettest"
 )
 
 var testDiag = flag.Bool("diag", false, "whether to test ICMP message exchange with external network")

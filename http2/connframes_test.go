@@ -13,7 +13,7 @@ import (
 	"slices"
 	"testing"
 
-	"cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/http2/hpack"
 )
 
 type testConnFramer struct {

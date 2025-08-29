@@ -7,7 +7,7 @@ package ipv4_test
 import (
 	"testing"
 
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 func TestControlMessageParseWithFuzz(t *testing.T) {

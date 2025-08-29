@@ -10,7 +10,7 @@ import (
 	"errors"
 	"io"
 
-	"cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/http2/hpack"
 )
 
 // QPACK (RFC 9204) header compression wire encoding.

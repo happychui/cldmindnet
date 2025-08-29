@@ -11,8 +11,8 @@ import (
 	"os"
 	"time"
 
-	"cldmindnet/icmp"
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/icmp"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 func ExampleConn_markingTCP() {

@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"sync"
 
-	"cldmindnet/quic"
+	"github.com/happychui/cldmindnet/quic"
 )
 
 // A Server is an HTTP/3 server.

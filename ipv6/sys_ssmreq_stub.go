@@ -9,7 +9,7 @@ package ipv6
 import (
 	"net"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 func (so *sockOpt) setGroupReq(c *socket.Conn, ifi *net.Interface, grp net.IP) error {

@@ -18,8 +18,8 @@ import (
 	"syscall"
 	"testing"
 
-	"cldmindnet/internal/socket"
-	"cldmindnet/nettest"
+	"github.com/happychui/cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/nettest"
 )
 
 func TestSocket(t *testing.T) {

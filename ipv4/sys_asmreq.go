@@ -11,7 +11,7 @@ import (
 	"net"
 	"unsafe"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 var errNoSuchInterface = errors.New("no such interface")

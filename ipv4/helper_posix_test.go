@@ -11,7 +11,7 @@ import (
 	"os"
 	"syscall"
 
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 func protocolNotSupported(err error) bool {

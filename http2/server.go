@@ -48,9 +48,9 @@ import (
 	"sync"
 	"time"
 
-	"cldmindnet/http/httpguts"
-	"cldmindnet/http2/hpack"
-	"cldmindnet/internal/httpcommon"
+	"github.com/happychui/cldmindnet/http/httpguts"
+	"github.com/happychui/cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/internal/httpcommon"
 )
 
 const (

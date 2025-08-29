@@ -28,7 +28,7 @@ import (
 	"sync"
 	"time"
 
-	"cldmindnet/http/httpguts"
+	"github.com/happychui/cldmindnet/http/httpguts"
 )
 
 var (

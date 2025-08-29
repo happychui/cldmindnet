@@ -7,8 +7,8 @@ package icmp
 import (
 	"encoding/binary"
 
-	"cldmindnet/internal/iana"
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 // A ParamProb represents an ICMP parameter problem message body.

@@ -7,7 +7,7 @@ package ipv4
 import (
 	"net"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 // BUG(mikio): On Windows, the ReadFrom and WriteTo methods of RawConn

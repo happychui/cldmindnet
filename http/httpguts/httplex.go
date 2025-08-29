@@ -9,7 +9,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"cldmindnet/idna"
+	"github.com/happychui/cldmindnet/idna"
 )
 
 var isTokenTable = [256]bool{

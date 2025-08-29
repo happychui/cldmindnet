@@ -16,7 +16,7 @@ import (
 	"strings"
 	"testing"
 
-	ixml "cldmindnet/webdav/internal/xml"
+	ixml "github.com/happychui/cldmindnet/webdav/internal/xml"
 )
 
 func TestReadLockInfo(t *testing.T) {

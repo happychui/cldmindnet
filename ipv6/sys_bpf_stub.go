@@ -7,8 +7,8 @@
 package ipv6
 
 import (
-	"cldmindnet/bpf"
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 func (so *sockOpt) setAttachFilter(c *socket.Conn, f []bpf.RawInstruction) error {

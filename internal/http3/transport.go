@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"sync"
 
-	"cldmindnet/quic"
+	"github.com/happychui/cldmindnet/quic"
 )
 
 // A Transport is an HTTP/3 transport.

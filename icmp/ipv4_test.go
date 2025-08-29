@@ -11,8 +11,8 @@ import (
 	"runtime"
 	"testing"
 
-	"cldmindnet/internal/socket"
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 func TestParseIPv4Header(t *testing.T) {

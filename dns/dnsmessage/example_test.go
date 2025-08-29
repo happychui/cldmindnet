@@ -9,7 +9,7 @@ import (
 	"net"
 	"strings"
 
-	"cldmindnet/dns/dnsmessage"
+	"github.com/happychui/cldmindnet/dns/dnsmessage"
 )
 
 func ExampleParser() {

@@ -8,8 +8,8 @@ import (
 	"net"
 	"testing"
 
-	"cldmindnet/bpf"
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 func TestVMLoadAbsoluteOffsetOutOfBounds(t *testing.T) {

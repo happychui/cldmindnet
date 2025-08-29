@@ -12,7 +12,7 @@ import (
 	"io"
 	"testing"
 
-	"cldmindnet/internal/quic/quicwire"
+	"github.com/happychui/cldmindnet/internal/quic/quicwire"
 )
 
 func TestStreamReadVarint(t *testing.T) {

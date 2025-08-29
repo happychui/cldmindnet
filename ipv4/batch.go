@@ -8,7 +8,7 @@ import (
 	"net"
 	"runtime"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 // BUG(mikio): On Windows, the ReadBatch and WriteBatch methods of

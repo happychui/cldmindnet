@@ -7,8 +7,8 @@ package icmp
 import (
 	"encoding/binary"
 
-	"cldmindnet/ipv4"
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 // An Extension represents an ICMP extension.

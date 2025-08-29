@@ -11,8 +11,8 @@ import (
 	"runtime"
 	"unsafe"
 
-	"cldmindnet/bpf"
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 func (so *sockOpt) getMulticastInterface(c *socket.Conn) (*net.Interface, error) {

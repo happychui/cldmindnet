@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 type headerTest struct {

@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"sync"
 
-	"cldmindnet/internal/httpcommon"
+	"github.com/happychui/cldmindnet/internal/httpcommon"
 )
 
 type roundTripState struct {

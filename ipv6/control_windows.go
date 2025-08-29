@@ -4,7 +4,7 @@
 
 package ipv6
 
-import "cldmindnet/internal/socket"
+import "github.com/happychui/cldmindnet/internal/socket"
 
 func setControlMessage(c *socket.Conn, opt *rawOpt, cf ControlFlags, on bool) error {
 	// TODO(mikio): implement this

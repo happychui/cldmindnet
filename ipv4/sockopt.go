@@ -4,7 +4,7 @@
 
 package ipv4
 
-import "cldmindnet/internal/socket"
+import "github.com/happychui/cldmindnet/internal/socket"
 
 // Sticky socket options
 const (

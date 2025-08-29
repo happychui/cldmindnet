@@ -15,8 +15,8 @@ import (
 	"strings"
 	"testing"
 
-	"cldmindnet/internal/socks"
-	"cldmindnet/internal/sockstest"
+	"github.com/happychui/cldmindnet/internal/socks"
+	"github.com/happychui/cldmindnet/internal/sockstest"
 )
 
 type proxyFromEnvTest struct {

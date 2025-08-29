@@ -10,8 +10,8 @@ import (
 	"os"
 	"runtime"
 
-	"cldmindnet/icmp"
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/icmp"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 func ExamplePacketConn_nonPrivilegedPing() {

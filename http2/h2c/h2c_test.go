@@ -16,7 +16,7 @@ import (
 	"strings"
 	"testing"
 
-	"cldmindnet/http2"
+	"github.com/happychui/cldmindnet/http2"
 )
 
 func ExampleNewHandler() {

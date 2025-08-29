@@ -13,8 +13,8 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/internal/quic/quicwire"
-	"cldmindnet/quic/qlog"
+	"github.com/happychui/cldmindnet/internal/quic/quicwire"
+	"github.com/happychui/cldmindnet/quic/qlog"
 )
 
 func TestParseLongHeaderPacket(t *testing.T) {

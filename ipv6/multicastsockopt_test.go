@@ -9,8 +9,8 @@ import (
 	"runtime"
 	"testing"
 
-	"cldmindnet/ipv6"
-	"cldmindnet/nettest"
+	"github.com/happychui/cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/nettest"
 )
 
 var packetConnMulticastSocketOptionTests = []struct {

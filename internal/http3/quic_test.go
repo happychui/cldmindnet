@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/internal/gate"
-	"cldmindnet/internal/testcert"
-	"cldmindnet/quic"
+	"github.com/happychui/cldmindnet/internal/gate"
+	"github.com/happychui/cldmindnet/internal/testcert"
+	"github.com/happychui/cldmindnet/quic"
 )
 
 // newLocalQUICEndpoint returns a QUIC Endpoint listening on localhost.

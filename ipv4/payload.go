@@ -7,7 +7,7 @@ package ipv4
 import (
 	"net"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 // BUG(mikio): On Windows, the ControlMessage for ReadFrom and WriteTo

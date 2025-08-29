@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"cldmindnet/websocket"
+	"github.com/happychui/cldmindnet/websocket"
 )
 
 // Echo the data received on the WebSocket.

@@ -10,7 +10,7 @@ import (
 	"net"
 	"runtime"
 
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 const (

@@ -7,7 +7,7 @@ package quic
 import (
 	"encoding/binary"
 
-	"cldmindnet/internal/quic/quicwire"
+	"github.com/happychui/cldmindnet/internal/quic/quicwire"
 )
 
 // A packetWriter constructs QUIC datagrams.

@@ -9,7 +9,7 @@ import (
 	"net/netip"
 	"time"
 
-	"cldmindnet/internal/quic/quicwire"
+	"github.com/happychui/cldmindnet/internal/quic/quicwire"
 )
 
 // transportParameters transferred in the quic_transport_parameters TLS extension.

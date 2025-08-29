@@ -10,7 +10,7 @@ import (
 	"context"
 	"io"
 
-	"cldmindnet/quic"
+	"github.com/happychui/cldmindnet/quic"
 )
 
 // A stream wraps a QUIC stream, providing methods to read/write various values.

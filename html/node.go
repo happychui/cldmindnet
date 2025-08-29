@@ -5,7 +5,7 @@
 package html
 
 import (
-	"cldmindnet/html/atom"
+	"github.com/happychui/cldmindnet/html/atom"
 )
 
 // A NodeType is the type of a Node.

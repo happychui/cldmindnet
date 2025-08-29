@@ -8,7 +8,7 @@ import (
 	"context"
 	"net"
 
-	"cldmindnet/internal/socks"
+	"github.com/happychui/cldmindnet/internal/socks"
 )
 
 // SOCKS5 returns a Dialer that makes SOCKSv5 connections to the given

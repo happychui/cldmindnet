@@ -4,7 +4,7 @@
 
 package ipv4
 
-import "cldmindnet/internal/iana"
+import "github.com/happychui/cldmindnet/internal/iana"
 
 // An ICMPType represents a type of ICMP message.
 type ICMPType int

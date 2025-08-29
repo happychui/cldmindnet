@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"testing"
 
-	"cldmindnet/internal/socks"
+	"github.com/happychui/cldmindnet/internal/socks"
 )
 
 func TestParseAuthRequest(t *testing.T) {

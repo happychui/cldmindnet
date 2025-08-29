@@ -10,7 +10,7 @@ import (
 	"io"
 	"strings"
 
-	a "cldmindnet/html/atom"
+	a "github.com/happychui/cldmindnet/html/atom"
 )
 
 // A parser implements the HTML5 parsing algorithm:

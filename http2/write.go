@@ -11,9 +11,9 @@ import (
 	"net/http"
 	"net/url"
 
-	"cldmindnet/http/httpguts"
-	"cldmindnet/http2/hpack"
-	"cldmindnet/internal/httpcommon"
+	"github.com/happychui/cldmindnet/http/httpguts"
+	"github.com/happychui/cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/internal/httpcommon"
 )
 
 // writeFramer is implemented by any type that is used to write frames.

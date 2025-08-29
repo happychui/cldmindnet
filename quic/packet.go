@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 	"fmt"
 
-	"cldmindnet/internal/quic/quicwire"
+	"github.com/happychui/cldmindnet/internal/quic/quicwire"
 )
 
 // packetType is a QUIC packet type.

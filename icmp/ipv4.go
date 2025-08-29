@@ -9,8 +9,8 @@ import (
 	"net"
 	"runtime"
 
-	"cldmindnet/internal/socket"
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 // freebsdVersion is set in sys_freebsd.go.

@@ -7,7 +7,7 @@ package bpf_test
 import (
 	"testing"
 
-	"cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/bpf"
 )
 
 func TestVMStoreScratchInvalidScratchRegisterTooSmall(t *testing.T) {

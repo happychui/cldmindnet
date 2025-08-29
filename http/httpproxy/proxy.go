@@ -20,7 +20,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"cldmindnet/idna"
+	"github.com/happychui/cldmindnet/idna"
 )
 
 // Config holds configuration for HTTP proxy settings. See

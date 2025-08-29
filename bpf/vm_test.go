@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"testing"
 
-	"cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/bpf"
 )
 
 var _ bpf.Instruction = unknown{}

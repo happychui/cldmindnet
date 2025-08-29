@@ -31,11 +31,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"cldmindnet/http/httpguts"
+	"github.com/happychui/cldmindnet/http/httpguts"
 
-	"cldmindnet/http2/hpack"
-	"cldmindnet/idna"
-	"cldmindnet/internal/httpcommon"
+	"github.com/happychui/cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/idna"
+	"github.com/happychui/cldmindnet/internal/httpcommon"
 )
 
 const (

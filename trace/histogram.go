@@ -14,7 +14,7 @@ import (
 	"math"
 	"sync"
 
-	"cldmindnet/internal/timeseries"
+	"github.com/happychui/cldmindnet/internal/timeseries"
 )
 
 const (

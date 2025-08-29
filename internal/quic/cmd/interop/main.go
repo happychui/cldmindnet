@@ -25,8 +25,8 @@ import (
 	"path/filepath"
 	"sync"
 
-	"cldmindnet/quic"
-	"cldmindnet/quic/qlog"
+	"github.com/happychui/cldmindnet/quic"
+	"github.com/happychui/cldmindnet/quic/qlog"
 )
 
 var (

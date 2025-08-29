@@ -22,8 +22,8 @@ import (
 	"os"
 	"strings"
 
-	"cldmindnet/http/httpguts"
-	"cldmindnet/http2"
+	"github.com/happychui/cldmindnet/http/httpguts"
+	"github.com/happychui/cldmindnet/http2"
 )
 
 var http2VerboseLogs bool

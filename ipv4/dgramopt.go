@@ -7,7 +7,7 @@ package ipv4
 import (
 	"net"
 
-	"cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/bpf"
 )
 
 // MulticastTTL returns the time-to-live field value for outgoing

@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/bpf"
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/bpf"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 func TestBPF(t *testing.T) {

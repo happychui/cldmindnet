@@ -12,9 +12,9 @@ import (
 	"runtime"
 	"syscall"
 
-	"cldmindnet/internal/iana"
-	"cldmindnet/ipv4"
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 const sysIP_STRIPHDR = 0x17 // for now only darwin supports this option

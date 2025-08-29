@@ -11,7 +11,7 @@ import (
 	"io"
 	"sync"
 
-	"cldmindnet/quic"
+	"github.com/happychui/cldmindnet/quic"
 )
 
 type streamHandler interface {

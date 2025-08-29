@@ -79,7 +79,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"cldmindnet/internal/timeseries"
+	"github.com/happychui/cldmindnet/internal/timeseries"
 )
 
 // DebugUseAfterFinish controls whether to debug uses of Trace values after finishing.

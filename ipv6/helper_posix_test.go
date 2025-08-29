@@ -11,7 +11,7 @@ import (
 	"os"
 	"syscall"
 
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 func protocolNotSupported(err error) bool {

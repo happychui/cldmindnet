@@ -35,7 +35,7 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/http2/hpack"
 )
 
 var (

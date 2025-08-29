@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/internal/gate"
+	"github.com/happychui/cldmindnet/internal/gate"
 )
 
 func TestGateLockAndUnlock(t *testing.T) {

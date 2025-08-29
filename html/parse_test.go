@@ -17,7 +17,7 @@ import (
 	"strings"
 	"testing"
 
-	"cldmindnet/html/atom"
+	"github.com/happychui/cldmindnet/html/atom"
 )
 
 type testAttrs struct {

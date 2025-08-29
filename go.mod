@@ -1,4 +1,4 @@
-module cldmindnet
+module github.com/happychui/cldmindnet
 
 go 1.24.0
 

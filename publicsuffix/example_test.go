@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"cldmindnet/publicsuffix"
+	"github.com/happychui/cldmindnet/publicsuffix"
 )
 
 // This example demonstrates looking up several domains' eTLDs (effective Top

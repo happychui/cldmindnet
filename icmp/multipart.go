@@ -4,7 +4,7 @@
 
 package icmp
 
-import "cldmindnet/internal/iana"
+import "github.com/happychui/cldmindnet/internal/iana"
 
 // multipartMessageBodyDataLen takes b as an original datagram and
 // exts as extensions, and returns a required length for message body

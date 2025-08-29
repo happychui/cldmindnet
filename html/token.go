@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"cldmindnet/html/atom"
+	"github.com/happychui/cldmindnet/html/atom"
 )
 
 // A TokenType is the type of a Token.

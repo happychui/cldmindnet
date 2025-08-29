@@ -9,8 +9,8 @@ import (
 	"net"
 	"sync"
 
-	"cldmindnet/internal/iana"
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/internal/socket"
 )
 
 type rawOpt struct {

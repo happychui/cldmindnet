@@ -10,7 +10,7 @@ import (
 	"math"
 	"time"
 
-	"cldmindnet/internal/quic/quicwire"
+	"github.com/happychui/cldmindnet/internal/quic/quicwire"
 )
 
 // A Config structure configures a QUIC endpoint.

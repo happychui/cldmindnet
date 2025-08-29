@@ -12,8 +12,8 @@ import (
 	"runtime"
 	"time"
 
-	"cldmindnet/icmp"
-	"cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/icmp"
+	"github.com/happychui/cldmindnet/ipv4"
 )
 
 func ExampleConn_markingTCP() {

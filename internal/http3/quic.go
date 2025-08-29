@@ -9,7 +9,7 @@ package http3
 import (
 	"crypto/tls"
 
-	"cldmindnet/quic"
+	"github.com/happychui/cldmindnet/quic"
 )
 
 func initConfig(config *quic.Config) *quic.Config {

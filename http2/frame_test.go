@@ -13,7 +13,7 @@ import (
 	"testing"
 	"unsafe"
 
-	"cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/http2/hpack"
 )
 
 func testFramer() (*Framer, *bytes.Buffer) {

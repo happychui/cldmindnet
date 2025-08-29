@@ -14,8 +14,8 @@ import (
 	"strings"
 	"sync"
 
-	"cldmindnet/http/httpguts"
-	"cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/http/httpguts"
+	"github.com/happychui/cldmindnet/http2/hpack"
 )
 
 const frameHeaderLen = 9

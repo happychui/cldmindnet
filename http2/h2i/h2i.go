@@ -36,8 +36,8 @@ import (
 	"strconv"
 	"strings"
 
-	"cldmindnet/http2"
-	"cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/http2"
+	"github.com/happychui/cldmindnet/http2/hpack"
 
 	"golang.org/x/term"
 )

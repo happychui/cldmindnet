@@ -7,7 +7,7 @@ package ipv6_test
 import (
 	"testing"
 
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 func TestControlMessageParseWithFuzz(t *testing.T) {

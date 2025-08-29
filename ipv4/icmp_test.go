@@ -10,8 +10,8 @@ import (
 	"runtime"
 	"testing"
 
-	"cldmindnet/ipv4"
-	"cldmindnet/nettest"
+	"github.com/happychui/cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/nettest"
 )
 
 var icmpStringTests = []struct {

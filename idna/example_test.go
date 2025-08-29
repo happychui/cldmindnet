@@ -7,7 +7,7 @@ package idna_test
 import (
 	"fmt"
 
-	"cldmindnet/idna"
+	"github.com/happychui/cldmindnet/idna"
 )
 
 func ExampleProfile() {

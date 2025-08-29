@@ -15,7 +15,7 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/quic/qlog"
+	"github.com/happychui/cldmindnet/quic/qlog"
 )
 
 func TestConnect(t *testing.T) {

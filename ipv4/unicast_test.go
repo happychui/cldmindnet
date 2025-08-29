@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/icmp"
-	"cldmindnet/internal/iana"
-	"cldmindnet/ipv4"
-	"cldmindnet/nettest"
+	"github.com/happychui/cldmindnet/icmp"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/nettest"
 )
 
 func TestPacketConnReadWriteUnicastUDP(t *testing.T) {

@@ -14,7 +14,7 @@ import (
 	"strings"
 	"testing"
 
-	"cldmindnet/internal/quic/quicwire"
+	"github.com/happychui/cldmindnet/internal/quic/quicwire"
 )
 
 func TestStreamWriteBlockedByOutputBuffer(t *testing.T) {

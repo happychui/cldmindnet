@@ -12,8 +12,8 @@ import (
 	"log"
 	"strings"
 
-	"cldmindnet/html"
-	"cldmindnet/html/atom"
+	"github.com/happychui/cldmindnet/html"
+	"github.com/happychui/cldmindnet/html/atom"
 )
 
 func ExampleParse() {

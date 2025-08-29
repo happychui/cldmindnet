@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"cldmindnet/http2/hpack"
-	"cldmindnet/internal/gate"
+	"github.com/happychui/cldmindnet/http2/hpack"
+	"github.com/happychui/cldmindnet/internal/gate"
 )
 
 // TestTestClientConn demonstrates usage of testClientConn.

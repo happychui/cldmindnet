@@ -7,7 +7,7 @@ package quic
 import (
 	"crypto/tls"
 
-	"cldmindnet/internal/testcert"
+	"github.com/happychui/cldmindnet/internal/testcert"
 )
 
 func newTestTLSConfig(side connSide) *tls.Config {

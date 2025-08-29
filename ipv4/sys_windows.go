@@ -5,8 +5,8 @@
 package ipv4
 
 import (
-	"cldmindnet/internal/iana"
-	"cldmindnet/internal/socket"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/internal/socket"
 
 	"golang.org/x/sys/windows"
 )

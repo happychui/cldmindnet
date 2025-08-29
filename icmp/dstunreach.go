@@ -5,9 +5,9 @@
 package icmp
 
 import (
-	"cldmindnet/internal/iana"
-	"cldmindnet/ipv4"
-	"cldmindnet/ipv6"
+	"github.com/happychui/cldmindnet/internal/iana"
+	"github.com/happychui/cldmindnet/ipv4"
+	"github.com/happychui/cldmindnet/ipv6"
 )
 
 // A DstUnreach represents an ICMP destination unreachable message

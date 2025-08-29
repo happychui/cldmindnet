@@ -10,8 +10,8 @@ import (
 	"io"
 	"net"
 
-	"cldmindnet/internal/socks"
-	"cldmindnet/nettest"
+	"github.com/happychui/cldmindnet/internal/socks"
+	"github.com/happychui/cldmindnet/nettest"
 )
 
 // An AuthRequest represents an authentication request.

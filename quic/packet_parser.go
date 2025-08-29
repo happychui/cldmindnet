@@ -4,7 +4,7 @@
 
 package quic
 
-import "cldmindnet/internal/quic/quicwire"
+import "github.com/happychui/cldmindnet/internal/quic/quicwire"
 
 // parseLongHeaderPacket parses a QUIC long header packet.
 //
